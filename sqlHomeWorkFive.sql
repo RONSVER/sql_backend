@@ -65,6 +65,14 @@ from sellers t1
 inner join sellers t2
 on t1.boss_id = t2.sell_id;
 
+-- Выведите имена покупателей, которые совершили покупку на сумму больше 1000 условных единиц.
+-- В выборке должно присутствовать два атрибута — cname, amt.
+
+select cust.cname as cname, o.amt as amt
+from customers cust
+inner join orders o on cust.cust_id = o.cust_id
+where o.amt > 1000;
+
 -- Выведите имена покупателей, которые сделали заказ.
 -- Предусмотрите в выборке также имена продавцов.
 -- Примечание: покупатели и продавцы должны быть из разных городов.
